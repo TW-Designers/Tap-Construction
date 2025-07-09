@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap Construction - Professional Roofing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',  // A rich indigo
+                        secondary: '#10B981', // A fresh teal
+                        accent: '#F59E0B',   // Keeping the warm accent
+                        dark: '#1F2937',     // A deep gray for text
+                        light: '#F3F4F6',    // A soft gray for backgrounds
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom CSS for animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .review-card {
+            transition: all 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-extrabold text-gray-800 tracking-tight hover:text-primary transition duration-300">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Tap Construction</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-primary transition">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-primary transition">Who We Are</a>
+                
+                <div class="dropdown relative">
+                    <button class="text-gray-700 hover:text-primary transition flex items-center">
+                        Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48">
+                        <a href="#residential" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-primary">Residential Roofing</a>
+                        <a href="#commercial" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-primary">Commercial Roofing</a>
+                        <a href="#repairs" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-primary">Roof Repairs</a>
+                        <a href="#inspections" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-primary">Roof Inspections</a>
+                        <a href="#gutters" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-primary">Gutter Services</a>
+                    </div>
+                </div>
+                
+                <a href="#reviews" class="text-gray-700 hover:text-primary transition">Reviews</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition">Contact</a>
+            </div>
+            
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6 animate-on-scroll" data-animation="fade-in">
+                Quality Roofing Solutions for Your Home or Business
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-on-scroll" data-animation="fade-in" data-delay="200">
+                Trusted by homeowners and businesses across the region for over 15 years. We provide durable, beautiful roofing solutions that stand the test of time.
+            </p>
+            <div class="animate-on-scroll" data-animation="slide-up" data-delay="400">
+                <a href="#contact" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-md transition duration-300 inline-block mr-4">
+                    Get a Free Quote
+                </a>
+                <a href="#about" class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-3 px-8 rounded-md transition duration-300 inline-block border border-gray-300">
+                    Learn About Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Who We Are</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Tap Construction has been providing exceptional roofing services since 2018. Our team of certified professionals is committed to quality craftsmanship and customer satisfaction.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-on-scroll" data-animation="slide-up">
+                    <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Roofing team working" class="rounded-lg shadow-lg w-full">
+                </div>
+                
+                <div class="animate-on-scroll" data-animation="slide-up" data-delay="200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Story</h3>
+                    <p class="text-gray-600 mb-6">
+                        Founded by Tony Phol, a  roofer with over 8 years of experience, Tap Construction began operations in 2018 as a small business and has grown into one of the most trusted roofing companies in the region.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        We believe in doing things the right way, not the easy way. That's why we use only premium materials and employ skilled craftsmen who take pride in their work.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-primary"></i>
+                            </div>
+                            <span class="text-gray-700">Licensed & Insured</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-primary"></i>
+                            </div>
+                            <span class="text-gray-700">Free Estimates</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-primary"></i>
+                            </div>
+                            <span class="text-gray-700">Warranty Protected</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive roofing solutions tailored to your specific needs. From installation to maintenance, we've got you covered.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Residential Roofing -->
+                <div id="residential" class="bg-white rounded-lg shadow-md overflow-hidden service-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Residential roofing" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Residential Roofing</h3>
+                        <p class="text-gray-600 mb-4">
+                            Protect your home with our premium residential roofing solutions. We offer asphalt shingles, metal roofing, tile, and more.
+                        </p>
+                        <a href="#residential-form" class="text-primary font-semibold hover:underline">Get a Quote →</a>
+                    </div>
+                </div>
+                
+                <!-- Commercial Roofing -->
+                <div id="commercial" class="bg-white rounded-lg shadow-md overflow-hidden service-card animate-on-scroll" data-delay="200">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Commercial roofing" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Commercial Roofing</h3>
+                        <p class="text-gray-600 mb-4">
+                            Durable roofing solutions for businesses. Flat roofs, modified bitumen, TPO, and other commercial-grade materials.
+                        </p>
+                        <a href="#commercial-form" class="text-primary font-semibold hover:underline">Get a Quote →</a>
+                    </div>
+                </div>
+                
+                <!-- Roof Repairs -->
+                <div id="repairs" class="bg-white rounded-lg shadow-md overflow-hidden service-card animate-on-scroll" data-delay="400">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Roof repairs" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Roof Repairs</h3>
+                        <p class="text-gray-600 mb-4">
+                            Fast, reliable repairs for leaks, storm damage, and wear-and-tear. We'll restore your roof's integrity quickly.
+                        </p>
+                        <a href="#repairs-detail" class="text-primary font-semibold hover:underline">Get a Quote →</a>
+                    </div>
+                </div>
+                
+                <!-- Roof Inspections -->
+                <div id="inspections" class="bg-white rounded-lg shadow-md overflow-hidden service-card animate-on-scroll">
+                    <img src="https://www.americanweatherstar.com/wp-content/uploads/2020/08/commercial-roof-inspection.jpg" alt="Professional roof inspection" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Roof Inspections</h3>
+                        <p class="text-gray-600 mb-4">
+                            Professional assessments to identify potential issues before they become costly problems. Includes written reports.
+                        </p>
+                        <a href="#inspections-detail" class="text-primary font-semibold hover:underline">Get a Quote →</a>
+                    </div>
+                </div>
+                
+                <!-- Gutter Services -->
+                <div id="gutters" class="bg-white rounded-lg shadow-md overflow-hidden service-card animate-on-scroll" data-delay="200">
+                    <img src="https://ecroofinginc.com/wp-content/uploads/2021/10/The-Process-of-Rain-Gutter-Repair-.jpg" alt="Gutter services" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Gutter Services</h3>
+                        <p class="text-gray-600 mb-4">
+                            Complete gutter solutions including installation, cleaning, repair, and leaf guard systems to protect your home.
+                        </p>
+                        <a href="#gutters-detail" class="text-primary font-semibold hover:underline">Get a Quote →</a>
+                    </div>
+                </div>
+                
+                <!-- Emergency Services -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden service-card animate-on-scroll" data-delay="400">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Emergency services" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Emergency Services</h3>
+                        <p class="text-gray-600 mb-4">
+                            24/7 emergency response for storm damage, leaks, and other urgent roofing issues. We're here when you need us most.
+                        </p>
+                        <a href="#contact" class="text-primary font-semibold hover:underline">Contact Us →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Detail Sections -->
+    <!-- Residential Roofing Detail -->
+    <section id="residential-detail" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Residential Roofing Solutions</h2>
+                    <div class="w-20 h-1 bg-primary mb-6"></div>
+                    <p class="text-gray-600 mb-6">
+                        Your home deserves the best protection. We offer a variety of residential roofing options to suit your style, budget, and climate needs.
+                    </p>
+                    <ul class="mb-8">
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Asphalt shingles - Affordable and durable</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Metal roofing - Long-lasting and energy-efficient</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Tile roofing - Classic beauty with modern durability</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Wood shakes - Natural charm with protective treatments</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Slate roofing - Premium option with century-long lifespan</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Residential roofing" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+            
+            <!-- Residential Roofing Form -->
+            <div id="residential-form" class="mt-16 bg-gray-50 p-8 rounded-lg shadow-md max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Get Your Free Residential Roofing Estimate</h3>
+                <form class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 mb-2">Phone</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label for="roof-type" class="block text-gray-700 mb-2">Roof Type Interest</label>
+                        <select id="roof-type" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Select an option</option>
+                            <option value="asphalt">Asphalt Shingles</option>
+                            <option value="metal">Metal Roofing</option>
+                            <option value="tile">Tile Roofing</option>
+                            <option value="wood">Wood Shakes</option>
+                            <option value="slate">Slate Roofing</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="message" class="block text-gray-700 mb-2">Project Details</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-md transition duration-300">
+                            Request Free Estimate
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Roofing Detail -->
+    <section id="commercial-detail" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Commercial roofing" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Commercial Roofing Expertise</h2>
+                    <div class="w-20 h-1 bg-primary mb-6"></div>
+                    <p class="text-gray-600 mb-6">
+                        Protect your business investment with commercial roofing systems designed for durability and performance. We understand the unique needs of commercial properties.
+                    </p>
+                    <ul class="mb-8">
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">TPO roofing - Energy-efficient and reflective</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">EPDM rubber - Durable and weather-resistant</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Modified bitumen - Reliable and cost-effective</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Metal roofing - Long lifespan with minimal maintenance</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Green roofing - Sustainable options available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Commercial Roofing Form -->
+            <div id="commercial-form" class="mt-16 bg-white p-8 rounded-lg shadow-md max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Commercial Roofing Consultation Request</h3>
+                <form class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="biz-name" class="block text-gray-700 mb-2">Business Name</label>
+                        <input type="text" id="biz-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label for="contact-name" class="block text-gray-700 mb-2">Contact Name</label>
+                        <input type="text" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label for="biz-email" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="biz-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label for="biz-phone" class="block text-gray-700 mb-2">Phone</label>
+                        <input type="tel" id="biz-phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <label for="property-type" class="block text-gray-700 mb-2">Property Type</label>
+                        <select id="property-type" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Select an option</option>
+                            <option value="retail">Retail</option>
+                            <option value="office">Office Building</option>
+                            <option value="warehouse">Warehouse</option>
+                            <option value="industrial">Industrial</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="roof-size" class="block text-gray-700 mb-2">Approximate Roof Size (sq ft)</label>
+                        <input type="text" id="roof-size" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="biz-message" class="block text-gray-700 mb-2">Project Details</label>
+                        <textarea id="biz-message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-md transition duration-300">
+                            Request Consultation
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Don't just take our word for it. Here's what our satisfied customers have to say about their experience with Tap Construction.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md review-card">
+                    <div class="flex mb-4">
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "Tap Construction replaced our entire roof after storm damage. The crew was professional, cleaned up perfectly, and finished ahead of schedule. Highly recommend!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                            <span class="text-gray-600 font-bold">JD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">James D.</h4>
+                            <p class="text-sm text-gray-500">Residential Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md review-card">
+                    <div class="flex mb-4">
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "Our office building needed a new roof and Tap Construction delivered exceptional service. Their team minimized disruption to our business and completed the project on budget."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                            <span class="text-gray-600 font-bold">MR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Michael R.</h4>
+                            <p class="text-sm text-gray-500">Commercial Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md review-card">
+                    <div class="flex mb-4">
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "After getting multiple quotes, Tap Construction offered the best value. They installed a beautiful metal roof that's already withstood several storms without issue. Very pleased!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="bg-gray-200 rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                            <span class="text-gray-600 font-bold">ST</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah T.</h4>
+                            <p class="text-sm text-gray-500">Residential Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Protect Your Property?</h2>
+            <p class="text-white text-xl mb-8 max-w-3xl mx-auto">
+                Contact Tap Construction today for a free, no-obligation estimate on your roofing project.
+            </p>
+            <a href="#contact" class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-8 rounded-md transition duration-300 inline-block">
+                Get Your Free Quote
+            </a>
+        </div>
+    </section>
+
+    <!-- Roof Inspections Detail -->
+    <section id="inspections-detail" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Professional Roof Inspections</h2>
+                    <div class="w-20 h-1 bg-primary mb-6"></div>
+                    <p class="text-gray-600 mb-6">
+                        Our comprehensive roof inspections help identify potential issues before they become costly problems. We provide detailed reports with recommendations.
+                    </p>
+                    <ul class="mb-8">
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Thorough visual inspection of all roof components</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Infrared scanning to detect moisture intrusion</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Detailed written report with photos</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Maintenance recommendations</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Priority scheduling for repairs if needed</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://www.americanweatherstar.com/wp-content/uploads/2020/08/commercial-roof-inspection.jpg" alt="Professional roof inspection" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roof Repairs Detail -->
+    <section id="repairs-detail" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://www.roof-crafters.com/hubfs/loose%20shingle%20222.jpg" alt="Roof repairs" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Expert Roof Repairs</h2>
+                    <div class="w-20 h-1 bg-primary mb-6"></div>
+                    <p class="text-gray-600 mb-6">
+                        From minor leaks to major storm damage, our repair services restore your roof's integrity quickly and effectively.
+                    </p>
+                    <ul class="mb-8">
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Leak detection and repair</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Storm damage repairs</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Shingle replacement</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Flashing repairs</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Emergency repair services</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gutter Services Detail -->
+    <section id="gutters-detail" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Complete Gutter Solutions</h2>
+                    <div class="w-20 h-1 bg-primary mb-6"></div>
+                    <p class="text-gray-600 mb-6">
+                        Protect your home's foundation with our professional gutter services, from installation to maintenance.
+                    </p>
+                    <ul class="mb-8">
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Gutter installation and replacement</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Professional gutter cleaning</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Gutter repair services</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Leaf guard installation</span>
+                        </li>
+                        <li class="flex items-start mb-3">
+                            <i class="fas fa-check text-primary mt-1 mr-2"></i>
+                            <span class="text-gray-700">Downspout solutions</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://ecroofinginc.com/wp-content/uploads/2021/10/The-Process-of-Rain-Gutter-Repair-.jpg" alt="Gutter services" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                    <div class="w-20 h-1 bg-primary mb-6"></div>
+                    <p class="text-gray-600 mb-8">
+                        Have questions about your roofing project? Our team is here to help. Fill out the form or contact us directly.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Address</h4>
+                                <p class="text-gray-600">22356 Buckhorn Trl
+
+Merrifield, MN 56465-2800</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Phone</h4>
+                                <p class="text-gray-600">(218) 461 2127</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                                <p class="text-gray-600">tapconstructionllc@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                                <p class="text-gray-600">Saturday: 9:00 AM - 1:00 PM</p>
+                                <p class="text-gray-600">Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-6">
+                                <label for="contact-name" class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label for="contact-email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label for="contact-phone" class="block text-gray-700 mb-2">Phone</label>
+                                <input type="tel" id="contact-phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label for="contact-service" class="block text-gray-700 mb-2">Service Needed</label>
+                                <select id="contact-service" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option value="">Select a service</option>
+                                    <option value="residential">Residential Roofing</option>
+                                    <option value="commercial">Commercial Roofing</option>
+                                    <option value="repairs">Roof Repairs</option>
+                                    <option value="inspections">Roof Inspections</option>
+                                    <option value="gutters">Gutter Services</option>
+                                    <option value="emergency">Emergency Services</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="contact-message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-md transition duration-300 w-full">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Tap Construction</h3>
+                    <p class="text-gray-400">
+                        Quality roofing solutions for residential and commercial properties. Trusted craftsmanship since 2016.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#residential" class="text-gray-400 hover:text-white transition">Residential Roofing</a></li>
+                        <li><a href="#commercial" class="text-gray-400 hover:text-white transition">Commercial Roofing</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#residential" class="text-gray-400 hover:text-white transition">Residential Roofing</a></li>
+                        <li><a href="#commercial" class="text-gray-400 hover:text-white transition">Commercial Roofing</a></li>
+                        <li><a href="#repairs" class="text-gray-400 hover:text-white transition">Roof Repairs</a></li>
+                        <li><a href="#inspections" class="text-gray-400 hover:text-white transition">Roof Inspections</a></li>
+                        <li><a href="#gutters" class="text-gray-400 hover:text-white transition">Gutter Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="bg-gray-700 hover:bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">
+                        Subscribe to our newsletter for tips and special offers.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Tap Construction. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            mobileMenuButton.addEventListener('click', function() {
+                const mobileMenu = document.querySelector('.md\\:flex');
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                mobileMenu.classList.toggle('flex-col');
+                mobileMenu.classList.toggle('absolute');
+                mobileMenu.classList.toggle('top-16');
+                mobileMenu.classList.toggle('left-0');
+                mobileMenu.classList.toggle('right-0');
+                mobileMenu.classList.toggle('bg-white');
+                mobileMenu.classList.toggle('shadow-md');
+                mobileMenu.classList.toggle('p-4');
+                mobileMenu.classList.toggle('space-y-4');
+            });
+        });
+    </script>
+</body>
+</html>
